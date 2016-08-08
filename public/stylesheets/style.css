@@ -1,0 +1,35 @@
+.tvshow__content{
+  background: steelblue;
+}
+.tvshow__content:nth-child(odd){
+  background-color: peru;
+}
+.tvshow__img{
+  display: block;
+  margin: 0 auto;
+  height: 300px;
+}
+
+.tvshow__img__responsive{
+  min-width: 100%;
+}
+
+.short-top-space{
+  margin-top: 15px;
+}
+.short-bottom-space{
+  margin-bottom: 15px;
+}
+
+.color-1{
+  background: peru;
+}
+
+.color-2{
+  background: olive;
+}
+
+#tvshows__main{
+  display: flex;
+  flex-wrap: wrap;
+}

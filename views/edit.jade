@@ -1,0 +1,54 @@
+extends layout
+block content
+  header 
+    .container
+      h1.text-center= title
+  section.container
+    #template--tvshow__edit
+      .row
+        .col-md-10.edit__tvshow
+          form.form-horizontal.short-top-space(method="POST",action="/edit/#{_id}")
+            input(name="_method",value="PUT",type="hidden")
+            .form-group
+              label.col-md-2.control-label(for="title") Título
+              .col-md-10
+                input.form-control(type="text", placeholder="Título",id="title",name="title" value="#{title}")
+            .form-group
+              label.col-md-2.control-label(for="poster") Imagen
+              .col-md-10
+                input.form-control(type="text", placeholder="URL Imagen",id="poster",name="poster" value="#{poster}")
+            .form-group
+              label.col-md-2.control-label(for="year") Año
+              .col-md-10
+                input.form-control(type="number", placeholder="Año",id="year",name="year" value="#{year}")
+            .form-group
+              label.col-md-2.control-label(for="country") País
+              .col-md-10
+                input.form-control(type="text", placeholder="País",id="country",name="country" value="#{country}")
+            .form-group
+              label.col-md-2.control-label(for="seasons") Temporadas
+              .col-md-10
+                input.form-control(type="number", placeholder="Temporadas",id="seasons",name="seasons" value="#{seasons}")
+            .form-group
+              label.col-md-2.control-label(for="gender") Género
+              .col-md-10
+                select.form-control(name="gender",id="gender")
+                  - var tipo = ['Drama','Fantasy','Sci-Fi', 'Thriller', 'Comedy'];
+                  -for(let i of tipo)
+                    -var genero = gender 
+                    -if(i === genero)
+                      option(value="#{i}" selected) #{i}
+                    -else
+                      option(value="#{i}") #{i}
+            .form-group
+              label.col-md-2.control-label(for="summary") Resumen
+              .col-md-10
+                textarea.form-control(id="summary",name="summary",rows="10") #{summary}
+            .col-md-10.col-md-offset-2   
+                button.btn.btn-success.btn-block(type="submit") Actualizar                 
+          .col-md-10.col-md-offset-2.short-top-space.short-bottom-space
+                form(method="POST",action="/edit/#{_id}")
+                  input(name="_method",value="DELETE",type="hidden")
+                  button.btn.btn-danger.btn-block(type="submit") Eliminar               
+              
+  

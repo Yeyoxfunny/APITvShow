@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  header
+    .container
+      h1.text-center= title
+    
+  section.main.container
+    template#template--tvshow
+      .col-md-4.col-sm-6.col-xs-12.tvshow__content
+        h3.text-center(data-title) Título
+        img(src="http://cdn2-www.comingsoon.net/assets/uploads/gallery/the-x-files-ew-photos/key-art-6-ufo.jpg",class="tvshow__img img-responsive",data-poster)
+        ul.list-group
+          li.list-group-item.short-top-space
+            h4.list-group-item-heading Año
+            p.tvshow__year.list-group-item-text(data-year) Cras justo odio
+          li.list-group-item
+            h4.list-group-item-heading País
+            p.tvshow__country.list-group-item-text(data-country) Cras justo odio
+          li.list-group-item
+            h4.list-group-item-heading Temporadas
+            p.tvshow__seasons.list-group-item-text(data-seasons) Cras justo odio
+          li.list-group-item
+            h4.list-group-item-heading Géneros
+            p.tvshow__seasons.list-group-item-text(data-gender) Cras justo odio
+          li.list-group-item
+            h4.list-group-item-heading Resumen
+            p.tvshows__summary.list-group-item-text.text-justify(data-summary) Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta aliquid et recusandae quis enim eaque assumenda rem ullam, odit. Consectetur beatae expedita, ipsum dicta reiciendis. Consectetur consequuntur asperiores, perspiciatis natus?
+          a.btn.btn-success.btn-block#edit-entry Editar
+    .row#tvshows__main
+
+block script__final
+  script.
+    $(document).on('ready',function(){ obtenerTVShows(); });
